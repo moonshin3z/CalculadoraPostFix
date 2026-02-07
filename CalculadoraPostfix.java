@@ -7,10 +7,23 @@ public class CalculadoraPostfix implements ICalculadoraPostfix {
 
     private IStack<Integer> pila;
 
+    /**
+     * Constructor de la calculadora.
+     * @param pila implementacion de IStack a usar.
+     * Precondicion: pila no debe ser null.
+     * Postcondicion: la calculadora queda lista para evaluar expresiones.
+     */
     public CalculadoraPostfix(IStack<Integer> pila) {
         this.pila = pila;
     }
 
+    /**
+     * Evalua una expresion en notacion postfix.
+     * @param expresion operandos y operadores separados por espacios.
+     * @return resultado de la evaluacion.
+     * Precondicion: la expresion debe tener operandos enteros y operadores +, -, *, / separados por espacios.
+     * Postcondicion: retorna el resultado entero de evaluar la expresion.
+     */
     @Override
     public int evaluar(String expresion) {
         // Vaciar la pila antes de evaluar
